@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yanyi.dao.OrderDao">
+	<resultMap id="BaseResultMap" type="com.yanyi.entity.OrderDto">
+
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="course_id" property="courseId" jdbcType="INTEGER" />
+		<result column="costomer_id" property="costomerId" jdbcType="INTEGER" />
+		<result column="is_final" property="isFinal" jdbcType="INTEGER" />
+	</resultMap>
+	<!-- 查询订单表 -->
+	<select id="queryAll" resultType="com.yanyi.entity.OrderDto">
+		SELECT
+		t.id,
+		t1.`name` costomerId,
+		t2.`name` courseId,
+		t.is_final isFinal
+		FROM study_order t
+		LEFT JOIN study_costomer t1 ON t.costomer_id = t1.id
+		LEFT JOIN study_course t2 ON t.course_id = t2.id
+	</select>
+	
+	<select id="queryOrder" resultType="com.yanyi.entity.OrderDto" parameterType="com.yanyi.entity.OrderDto">
+		SELECT id,course_id courseId,costomer_id costomerId,is_final isFinal FROM study_order
+		<where>
+			<if test="courseId!=null">
+				course_id = #{courseId}
+			</if>
+			<if test="costomerId!=null">
+				costomer_id = #{costomerId}
+			</if>
+		</where>
+	</select>
+</mapper>

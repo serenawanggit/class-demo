@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yanyi.dao.RoleDao" >
+	<select id="queryRole" resultType="com.yanyi.entity.RoleDto" parameterType="map">
+		select id,name,parent_id parentId from study_role
+	</select>
+	
+	<insert id="addRole" parameterType="com.yanyi.entity.RoleDto">
+		INSERT INTO study_role(name,parent_id) VALUES(#{name}, #{parentId})
+	</insert>
+	
+	<update id="updateRoleById" parameterType="com.yanyi.entity.RoleDto">
+		UPDATE study_role SET name=#{name} WHERE id=#{id}
+	</update>
+	
+	<delete id="delRoleById" parameterType="string">
+		DELETE FROM study_role WHERE id IN (${value})
+	</delete>
+</mapper>

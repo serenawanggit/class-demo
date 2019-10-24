@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yanyi.dao.GradeDao" >
+	<select id="queryGradeByDto" parameterType="com.yanyi.entity.GradeDto" resultType="com.yanyi.entity.GradeDto">
+		SELECT s.id,s.course_id courseId,s.costomer_id costomerId,c.name costomerName,course.name courseName,s.score FROM study_score s 
+			LEFT JOIN study_costomer c ON c.id=s.costomer_id LEFT JOIN study_course course ON course.id=s.course_id
+	</select>
+</mapper>
