@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yanyi.dao.LoveDao">
+	<select id="queryAll" resultType="com.yanyi.entity.LoveDto" parameterType="com.yanyi.entity.LoveDto">
+		select * from study_love
+	</select>
+	
+	<delete id="delLoveById"  parameterType="string">
+		delete from study_love where id = #{value}
+	</delete>
+	
+	<insert id="addLove"  parameterType="com.yanyi.entity.LoveDto">
+		insert into study_love (costomer_id, course_id) values ( #{costomer_id}, #{course_id})
+	</insert>
+	
+</mapper>

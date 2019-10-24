@@ -16,7 +16,7 @@ public class JsonUtil
       return null;
     }
     ObjectMapper om = new ObjectMapper();
-    String json = null;
+//    String json = null;
     try
     {
       return om.writeValueAsString(object);
@@ -61,7 +61,6 @@ public class JsonUtil
     {
       mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
       mapper.configure(JsonParser.Feature.ALLOW_SINGLE_QUOTES, true);
-      
 
       return (T) mapper.readValue(json, clazz);
     }

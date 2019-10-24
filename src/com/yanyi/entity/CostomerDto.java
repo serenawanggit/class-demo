@@ -9,6 +9,8 @@ public class CostomerDto {
     private String password;
 
     private String phone;
+
+    private String study_NO;
     
     public CostomerDto(){
     	super();
@@ -76,6 +78,12 @@ public class CostomerDto {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getStudy_NO() {
+		return study_NO;
+	}
+	public void setStudy_NO(String study_NO) {
+		this.study_NO = study_NO;
 	}
 
 }

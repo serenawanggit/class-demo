@@ -100,22 +100,6 @@
           	<button class="layui-btn layui-btn-primary layui-btn-xs" onclick="del(0)"><i class="layui-icon">&#xe640;</i></button>
           </div>
         </div>
-        <div class="caller-item">
-          <img src="${pageContext.request.contextPath}/image/351.jpg" alt="" class="course-img">
-          <div class="caller-main caller-fl" style="float:left;width:50%;">       
-            <p><a href="javascript:toVideo();">简单有效的科学唱歌方法</a></p>
-            <b style="color:red;font-size:16px;">￥79</b>
-          </div>
-          <div style="width:10%;height:30px;float:right;"><button class="layui-btn layui-btn-primary layui-btn-xs"><i class="layui-icon">&#xe640;</i></button></div>
-        </div>
-        <div class="caller-item">
-          <img src="${pageContext.request.contextPath}/image/351.jpg" alt="" class="course-img">
-          <div class="caller-main caller-fl" style="float:left;width:50%;">       
-            <p><a href="javascript:toVideo();">简单有效的科学唱歌方法</a></p>
-            <b style="color:red;font-size:16px;">￥79</b>
-          </div>
-          <div style="width:10%;height:30px;float:right;"><button class="layui-btn layui-btn-primary layui-btn-xs"><i class="layui-icon">&#xe640;</i></button></div>
-        </div>
       </div>
     </div>
 </div>
