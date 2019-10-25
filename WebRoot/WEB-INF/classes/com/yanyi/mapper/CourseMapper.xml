@@ -142,7 +142,11 @@
 		WHERE id=#{id}
 	</update>
 	
-	<select id="queryCourseByOrder" parameterType="map" resultType="com.yanyi.entity.CourseDto">
-		
+	<select id="queryCourseByOrder" parameterType="com.yanyi.entity.OrderDto" resultType="com.yanyi.entity.CourseDto">
+		SELECT c.name,c.image,o.updateTime,.o.state FROM study_course c INNER JOIN study_order o on o.course_id=c.id 
+			WHERE o.costomer_id=#{costomerId}
+			<if test="state!=null">
+				AND state=#{state}
+			</if>
 	</select>
 </mapper>

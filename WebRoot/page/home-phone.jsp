@@ -624,7 +624,7 @@
 
 		<!-- 底部导航 -->
 		<div id="footer-nav" class="footer-nav">
-			<a href="${pageContext.request.contextPath }/page/home-phone.jsp" class="weui-tabbar__item weui-bar__item_on"> 
+			<a href="${pageContext.request.contextPath }/home/index" class="weui-tabbar__item weui-bar__item_on"> 
 				<img src="${pageContext.request.contextPath }/image/attachment/images/10/2019/04/zGBD88TBj338v8B8e4Mcbfj24b4e2E.png" class="weui-tabbar__icon" />
 				<p class="weui-tabbar__label">首页</p>
 			</a> <a href="${pageContext.request.contextPath }/page/course-all.jsp" class="weui-tabbar__item "> 

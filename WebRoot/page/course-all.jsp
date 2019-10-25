@@ -143,7 +143,7 @@
 
 		<!-- 底部导航 -->
 		<div id="footer-nav" class="footer-nav">
-			<a href="${pageContext.request.contextPath }/page/home-phone.jsp" class="weui-tabbar__item "> 
+			<a href="${pageContext.request.contextPath }/home/index" class="weui-tabbar__item "> 
 				<img src="${pageContext.request.contextPath }/image/attachment/images/10/2019/04/o6QGTwRgr44zM64AW63abA4wC6MRw7.png" class="weui-tabbar__icon" />
 				<p class="weui-tabbar__label">首页</p>
 			</a> <a href="${pageContext.request.contextPath }/page/course-all.jsp" class="weui-tabbar__item weui-bar__item_on"> 

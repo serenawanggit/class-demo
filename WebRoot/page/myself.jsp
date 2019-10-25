@@ -374,7 +374,7 @@
 
 		<!-- 底部导航 -->
 		<div id="footer-nav" class="footer-nav">
-			<a href="${pageContext.request.contextPath }/page/home-phone.jsp"
+			<a href="${pageContext.request.contextPath }/home/index"
 				class="weui-tabbar__item "> <img
 				src="${pageContext.request.contextPath }/image/attachment/images/10/2019/04/o6QGTwRgr44zM64AW63abA4wC6MRw7.png"
 				class="weui-tabbar__icon" />

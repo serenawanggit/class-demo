@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yanyi.entity.CourseDto;
 import com.yanyi.entity.CourseTypeDto;
+import com.yanyi.entity.OrderDto;
 import com.yanyi.service.CourseService;
+import com.yanyi.util.JsonUtil;
 
 @Controller
 @RequestMapping("/home")
@@ -38,14 +40,15 @@ public class HomePageController {
 	}
 	
 	@ResponseBody
-	@RequestMapping("/home/queryCourseTypeByParentIdToAll")
+	@RequestMapping("/queryCourseTypeByParentIdToAll")
 	public String queryCourseTypeByParentId(){
 		return "";
 	}
 
+	@ResponseBody
 	@RequestMapping("/myCourse")
-	public String myCourse(){
-		return "course-my";
+	public String myCourse(OrderDto dto){
+		return JsonUtil.object2Json(courseService.queryCourseByOrder(dto));
 	}
 
 	@RequestMapping("/myself")

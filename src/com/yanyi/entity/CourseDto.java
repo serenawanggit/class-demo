@@ -1,6 +1,7 @@
 package com.yanyi.entity;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 public class CourseDto {
 	private Integer id;
@@ -12,6 +13,9 @@ public class CourseDto {
 	private Integer isFlag;
 	private String remark;
 	private Date updateTime;
+	
+	//订单状态
+	private Integer state;
 	
 	private Integer pageSize;//
 	private Integer totalCount;//开始行数
@@ -139,6 +143,12 @@ public class CourseDto {
 	}
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+	public Integer getState() {
+		return state;
+	}
+	public void setState(Integer state) {
+		this.state = state;
 	}
 	
 	

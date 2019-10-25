@@ -1,10 +1,10 @@
 package com.yanyi.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import com.yanyi.entity.CourseDto;
 import com.yanyi.entity.CourseTypeDto;
+import com.yanyi.entity.OrderDto;
 import com.yanyi.entity.QuestionDto;
 
 public interface CourseDao {
@@ -35,6 +35,7 @@ public interface CourseDao {
 
 	int delCourseQuestionById(String ids);
 
-	List<CourseDto> queryCourseByOrder(Map<String, String> map);
+	//查询客户订单中的课程
+	List<CourseDto> queryCourseByOrder(OrderDto dto);
 	
 }

@@ -1,7 +1,6 @@
 package com.yanyi.service.impl;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.yanyi.dao.CourseDao;
 import com.yanyi.entity.CourseDto;
 import com.yanyi.entity.CourseTypeDto;
+import com.yanyi.entity.OrderDto;
 import com.yanyi.entity.QuestionDto;
 import com.yanyi.service.CourseService;
 
@@ -83,8 +83,8 @@ public class CourseServiceImpl implements CourseService{
 	}
 
 	@Override
-	public List<CourseDto> queryCourseByOrder(Map<String, String> map) {
-		return null;
+	public List<CourseDto> queryCourseByOrder(OrderDto dto) {
+		return courseDao.queryCourseByOrder(dto);
 	}
 
 }
