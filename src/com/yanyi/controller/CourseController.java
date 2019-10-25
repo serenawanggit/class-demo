@@ -77,8 +77,8 @@ public class CourseController {
 	@RequestMapping("/queryCourse")
 	public String queryCourse(CourseDto dto, Integer limit, Integer page){
 		PageTableResult result = new PageTableResult();
-		dto.setPageSize(limit);
-		dto.setTotalCount((page-1)*limit);
+		if(limit!=null && limit!=0) dto.setPageSize(limit);
+		if(page!=null && page!=0) dto.setTotalCount((page-1)*limit);
 		List<CourseDto> queryCourse = courseService.queryCourse(dto);
 		result.setData(queryCourse);
 		result.setCode(0);

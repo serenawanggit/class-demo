@@ -45,7 +45,7 @@
 .bottom{ height:70px; text-align:center; }
 .bottom .col{ float:left; width:25%; }
 .course-img{float: left;width: 100px;height: 100px;border-radius: 100%;}
-.layadmin-caller{padding-top:15px;}
+.layadmin-caller{padding-top:15px;padding-left:10px;padding-right:10px;}
 .layadmin-caller .caller-contar .caller-item{padding:6px 0;overflow: hidden;border-bottom: 1px solid #e0e0e0;}
 .layadmin-caller .caller-contar .caller-item .caller-main p:first-child{padding-top:8px;}
 .lesson_div_top{position: relative;padding-bottom: 36%;padding-top:10px;color: white;background-repeat: no-repeat;background-position: center center;background-size: cover;background-image: url(${pageContext.request.contextPath }/image/agency-top.jpg);}
@@ -87,44 +87,44 @@
 <!-- /顶部导航  -->
 
 <!-- 订单列表  -->
-<div class="my_empty">
+<!-- <div class="my_empty"> -->
     <div class="layadmin-caller">
-      <div class="caller-contar">
+      <div class="caller-contar" id="courseList">
+      
         <div class="caller-item" id="course-0">
           <img src="${pageContext.request.contextPath}/image/351.jpg" class="course-img">
-          <!-- <div class="caller-main caller-fl" style="float:left;width:50%;">       
-            <p><a href="javascript:toVideo();">简单有效的科学唱歌方法12</a></p>
-            <b style="color:red;font-size:16px;">￥79</b>
-          </div> -->
           <div class="flex10" style="padding-left:8px;width:45%;float:left;">
 				<div>
-					<div class="grid_title2">
-						<span class="grid_info">课程名称：</span>3333333333
-					</div>
-					<div class="flex0 font_12">
-						<!-- <span class="grid_info">课程规格：</span>888888天 -->
-						<span class="grid_info">课程规格：</span>长期有效
-					</div>
-					<div class="flex0 font_12">
-						<span class="grid_info">核销状态：</span><i class="green-color">未核销</i>
-						<!-- <span class="grid_info">核销状态：</span><i class="red-color">已核销6666次</i>
-						<span class="grid_info">核销状态：</span><i class="red-color">核销完成(7777777次)</i> -->
-					</div>
-					<div class="flex0 font_12">
-						<span class="grid_info">下单时间：</span>2019-10-10
-					</div>
-					<div class="flex0 font_12">
-					</div>
+					<div class="grid_title2"><span class="grid_info">课程名称：</span>3333333333</div>
+					<div class="flex0 font_12"><span class="grid_info">课程规格：</span>长期有效</div>
+					<div class="flex0 font_12"><span class="grid_info">核销状态：</span><i class="green-color">未核销</i></div>
+					<div class="flex0 font_12"><span class="grid_info">下单时间：</span>2019-10-10</div>
 				</div>
 			</div>
           <div style="width:10%;height:30px;float:right;">
           	<button class="layui-btn layui-btn-primary layui-btn-xs" onclick="del(0)"><i class="layui-icon">&#xe640;</i></button>
           </div>
         </div>
+        
+        <div class="caller-item" id="course-0">
+          <img src="${pageContext.request.contextPath}/image/351.jpg" class="course-img">
+          <div class="flex10" style="padding-left:8px;width:45%;float:left;">
+				<div>
+					<div class="grid_title2"><span class="grid_info">课程名称：</span>3333333333</div>
+					<div class="flex0 font_12"><span class="grid_info">课程规格：</span>长期有效</div>
+					<div class="flex0 font_12"><span class="grid_info">核销状态：</span><i class="green-color">未核销</i></div>
+					<div class="flex0 font_12"><span class="grid_info">下单时间：</span>2019-10-10</div>
+				</div>
+			</div>
+          <div style="width:12%;height:30px;float:right;">
+			<button type="button" class="layui-btn layui-btn-xs">付款</button>
+          </div>
+        </div>
+        
 				
       </div>
     </div>
-</div>
+<!-- </div> -->
 <!-- 订单列表  -->
 <div id="loading_div" class="loading_div"><div class="loading_bd">没有了，已经到底了</div></div>
 

@@ -8,7 +8,7 @@ public class OrderDto {
 
     private String costomerId;
 
-    private Integer isFinal;
+    private Integer state;
 
     public Integer getId() {
         return id;
@@ -17,13 +17,14 @@ public class OrderDto {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Integer getIsFinal() {
-        return isFinal;
-    }
 
-    public void setIsFinal(Integer isFinal) {
-        this.isFinal = isFinal;
-    }
+	public Integer getState() {
+		return state;
+	}
+
+	public void setState(Integer state) {
+		this.state = state;
+	}
 
 	public String getCourseId() {
 		return courseId;
