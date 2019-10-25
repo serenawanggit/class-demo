@@ -3,7 +3,6 @@
 *.class
 *.jar
 *.log
-*.xml
 /logs/*
 /target/*
 .gitignore
