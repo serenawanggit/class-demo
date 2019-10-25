@@ -31,5 +31,8 @@ public interface CourselistDao {
 	 * @return
 	 */
 	int addCourse(CourselistDto course);
+	
+	//条件查询
+	List<CourselistDto> queryCourseListByParam(CourselistDto dto);
   
 }

@@ -2,15 +2,31 @@ package com.yanyi.entity;
 
 public class CourselistDto {
    
-   private int id;
+   private Integer id;
    private String name;
    private String course;
    private String courseId;
+   private String video;
    
-public int getId() {
+public CourselistDto(Integer id, String courseId) {
+	super();
+	this.id = id;
+	this.courseId = courseId;
+}
+public CourselistDto(Integer id, String name, String course, String courseId) {
+	super();
+	this.id = id;
+	this.name = name;
+	this.course = course;
+	this.courseId = courseId;
+}
+public CourselistDto() {
+	super();
+}
+public Integer getId() {
 	return id;
 }
-public void setId(int id) {
+public void setId(Integer id) {
 	this.id = id;
 }
 public String getName() {
@@ -30,6 +46,12 @@ public String getCourseId() {
 }
 public void setCourseId(String courseId) {
 	this.courseId = courseId;
+}
+public String getVideo() {
+	return video;
+}
+public void setVideo(String video) {
+	this.video = video;
 }
 
   

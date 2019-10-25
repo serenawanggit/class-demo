@@ -13,36 +13,41 @@ import com.yanyi.service.ICourselistService;
 public class CourselistServiceImpl implements ICourselistService {
 	
 		@Resource
-		private CourselistDao  costomerMapper;
+		private CourselistDao  courselistDao;
 
 	@Override
 	public List<CourselistDto> queryAll(CourselistDto course) {
 		// TODO Auto-generated method stub
-		return costomerMapper.queryAll(course);
+		return courselistDao.queryAll(course);
 	}
 
 	@Override
 	public int delCourseById(String ids) {
 		// TODO Auto-generated method stub
-		return costomerMapper.delCourseById(ids);
+		return courselistDao.delCourseById(ids);
 	}
 
 	@Override
 	public List<CourselistDto> queryCourse(CourselistDto course) {
 		// TODO Auto-generated method stub
-		return costomerMapper.queryCourse(course);
+		return courselistDao.queryCourse(course);
 	}
 
 	@Override
 	public int updateCourseById(CourselistDto course) {
 		// TODO Auto-generated method stub
-		return costomerMapper.updateCourseById(course);
+		return courselistDao.updateCourseById(course);
 	}
 
 	@Override
 	public int addCourse(CourselistDto course) {
 		// TODO Auto-generated method stub
-		return costomerMapper.addCourse(course);
+		return courselistDao.addCourse(course);
+	}
+
+	@Override
+	public List<CourselistDto> queryCourseListByParam(CourselistDto dto) {
+		return courselistDao.queryCourseListByParam(dto);
 	}
 
 }

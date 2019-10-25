@@ -70,4 +70,19 @@
 			INSERT INTO study_course_list (name,course_id)
 			VALUES (#{name},#{courseId})
 	</insert>
+	
+	<select id="queryCourseListByParam" resultType="com.yanyi.entity.CourselistDto" parameterType="com.yanyi.entity.CourselistDto">
+		SELECT id,name,course_id courseId, video FROM study_course_list t
+		<where>
+			<if test="id!=null">
+				And id = #{id}
+			</if>
+			<if test="name!=null">
+				And id like '%${id}%'
+			</if>
+			<if test="courseId!=null">
+				And course_id = #{courseId}
+			</if>
+		</where>
+	</select>
 </mapper>

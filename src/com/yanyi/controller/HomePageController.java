@@ -1,6 +1,7 @@
 package com.yanyi.controller;
 
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yanyi.entity.CourseDto;
 import com.yanyi.entity.CourseTypeDto;
+import com.yanyi.entity.CourselistDto;
 import com.yanyi.entity.OrderDto;
 import com.yanyi.service.CourseService;
+import com.yanyi.service.ICourselistService;
 import com.yanyi.util.JsonUtil;
 
 @Controller
@@ -19,6 +22,8 @@ import com.yanyi.util.JsonUtil;
 public class HomePageController {
 	@Autowired
 	private CourseService courseService;
+	@Autowired
+	private ICourselistService courselistService;
 	
 	@RequestMapping("/index")
 	public String index(Model mo){
@@ -54,6 +59,13 @@ public class HomePageController {
 	@RequestMapping("/myself")
 	public String myself(){
 		return "myself";
+	}
+	
+	@RequestMapping("/toVideoView")
+	public String toVideoView(Integer courseId, Model mo){
+		mo.addAttribute("courseData", courseService.queryCourse(new CourseDto(courseId, null)));
+		mo.addAttribute("courselistData", courselistService.queryCourseListByParam(new CourselistDto(null, Objects.toString(courseId))));
+		return "myCourse/video_view";
 	}
 	
 

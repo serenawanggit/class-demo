@@ -39,11 +39,12 @@
 	</delete>
 	
 	<insert id="addCourse" parameterType="com.yanyi.entity.CourseDto">
-		INSERT INTO study_course(name,video,image,price,course_type_id,is_flag,remark,update_time) VALUES(#{name},#{video},#{image},#{price},#{courseTypeId},#{isFlag},#{remark},NOW())
+		INSERT INTO study_course(name,video,image,price,course_type_id,is_flag,remark,update_time,detail) 
+			VALUES(#{name},#{video},#{image},#{price},#{courseTypeId},#{isFlag},#{remark},NOW(),#{detail})
 	</insert>
 	
 	<select id="queryCourse" resultType="com.yanyi.entity.CourseDto" parameterType="com.yanyi.entity.CourseDto">
-		select id,name,video,image,price,course_type_id courseTypeId,is_flag isFlag,update_time updateTime,remark from study_course WHERE 1=1
+		select id,name,video,image,price,course_type_id courseTypeId,is_flag isFlag,update_time updateTime,remark,detail from study_course WHERE 1=1
 		<if test="id!=null and id!=''">
 			AND id=#{id}
 		</if>
@@ -91,6 +92,9 @@
 			  </if>
 			  <if test="price!=null">
 				price=#{price}
+			  </if>
+			  <if test="detail!=null">
+			  	detail=#{detail}
 			  </if>
 		    </set>
 		WHERE id=#{id}

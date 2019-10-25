@@ -13,6 +13,7 @@ public class CourseDto {
 	private Integer isFlag;
 	private String remark;
 	private Date updateTime;
+	private String detail;
 	
 	//订单状态
 	private Integer state;
@@ -149,6 +150,12 @@ public class CourseDto {
 	}
 	public void setState(Integer state) {
 		this.state = state;
+	}
+	public String getDetail() {
+		return detail;
+	}
+	public void setDetail(String detail) {
+		this.detail = detail;
 	}
 	
 	
