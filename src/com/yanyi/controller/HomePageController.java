@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.yanyi.entity.CourseDto;
 import com.yanyi.entity.CourseTypeDto;
 import com.yanyi.entity.CourselistDto;
+import com.yanyi.entity.LoveDto;
 import com.yanyi.entity.OrderDto;
 import com.yanyi.service.CourseService;
 import com.yanyi.service.ICourselistService;
+import com.yanyi.service.LoveService;
 import com.yanyi.util.JsonUtil;
 
 @Controller
@@ -24,6 +26,8 @@ public class HomePageController {
 	private CourseService courseService;
 	@Autowired
 	private ICourselistService courselistService;
+	@Autowired
+	private LoveService loveService;
 	
 	@RequestMapping("/index")
 	public String index(Model mo){
@@ -66,6 +70,15 @@ public class HomePageController {
 		mo.addAttribute("courseData", courseService.queryCourse(new CourseDto(courseId, null)));
 		mo.addAttribute("courselistData", courselistService.queryCourseListByParam(new CourselistDto(null, Objects.toString(courseId))));
 		return "myCourse/video_view";
+	}
+	
+
+	@RequestMapping("/toCourseDetail")
+	public String toCourseDetail(Integer courseId, Model mo){
+		mo.addAttribute("courseData", courseService.queryCourse(new CourseDto(courseId, null)));
+		mo.addAttribute("courselistData", courselistService.queryCourseListByParam(new CourselistDto(null, Objects.toString(courseId))));
+		mo.addAttribute("loveData", loveService.queryAll(new LoveDto(null, "1", Objects.toString(courseId))));
+		return "myCourse/course-detail";
 	}
 	
 

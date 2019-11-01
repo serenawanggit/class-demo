@@ -74,25 +74,25 @@
 					<!--图片一-->
 					<c:forEach items="${lbList }" var="item">
 						<div class="swiper-slide">
-							<a href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+							<a href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 								<img class="swiper-lazy" src="${pageContext.request.contextPath }/uploadFiles/${item.image }">
 							</a>
 						</div>
 					</c:forEach>
 					<%-- <div class="swiper-slide">
-						<a href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+						<a href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 							<img class="swiper-lazy"
 							src="${pageContext.request.contextPath }/image/attachment/images/10/2019/06/G821fBg8sbddwGH8B1HGbd2DHZ26D1.jpg">
 						</a>
 					</div>
 					<div class="swiper-slide">
-						<a href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+						<a href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 							<img class="swiper-lazy"
 							src="${pageContext.request.contextPath }/image/attachment/images/10/2019/06/XeTNP63mPK63Q6M2NJZT4p5KtxNeK6.png">
 						</a>
 					</div>
 					<div class="swiper-slide">
-						<a href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+						<a href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 							<img class="swiper-lazy"
 							src="${pageContext.request.contextPath }/image/attachment/images/10/2019/06/S3a4H55RXKn5mN5NOZU333QhuKz6ar.jpg">
 						</a>
@@ -128,7 +128,7 @@
 					<div class="flex_all index_newlesson_title">最新更新</div>
 				</div>
 				<a
-					href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+					href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 					class="new_lesson flex0_1">
 					<div class="new_lesson_a flex_g0">
 						<div class="img-box flex_g0">
@@ -152,7 +152,7 @@
 						</div>
 					</div>
 				</a> <a
-					href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+					href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 					class="new_lesson flex0_1">
 					<div class="new_lesson_a flex_g0">
 						<div class="img-box flex_g0">
@@ -177,7 +177,7 @@
 						</div>
 					</div>
 				</a> <a
-					href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+					href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 					class="new_lesson flex0_1">
 					<div class="new_lesson_a flex_g0">
 						<div class="img-box flex_g0">
@@ -218,7 +218,7 @@
 					<div class="teacher_swiper">
 						<div class="swiper-wrapper">
 							<div class="swiper-slide">
-								<a href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+								<a href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 									<div class="img-box">
 										<div class="img">
 											<img
@@ -231,7 +231,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a
-									href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+									href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 									<div class="img-box">
 										<div class="img">
 											<img
@@ -244,7 +244,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a
-									href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+									href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 									<div class="img-box">
 										<div class="img">
 											<img
@@ -257,7 +257,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a
-									href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+									href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 									<div class="img-box">
 										<div class="img">
 											<img
@@ -270,7 +270,7 @@
 							</div>
 							<div class="swiper-slide">
 								<a
-									href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')">
+									href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')">
 									<div class="img-box">
 										<div class="img">
 											<img
@@ -308,7 +308,7 @@
 				<!-- 单图文 -->
 				<div class="small_grid">
 					<c:forEach items="${videoList }" var="item">
-						<a href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')" class="small_grid_a">
+						<a href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')" class="small_grid_a">
 							<div class="img-box">
 								<div class="img">
 									<img class="lazy" src="${pageContext.request.contextPath }/uploadFiles/${item.image }" />
@@ -325,7 +325,7 @@
 						</a> 
 					</c:forEach>
 					<%-- <a
-						href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+						href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 						class="small_grid_a">
 						<div class="img-box">
 							<div class="img">
@@ -343,7 +343,7 @@
 								class="index_section_number">27节</span>
 						</div>
 					</a> <a
-						href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+						href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 						class="small_grid_a">
 						<div class="img-box">
 							<div class="img">
@@ -361,7 +361,7 @@
 								class="index_section_number">1节</span>
 						</div>
 					</a> <a
-						href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+						href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 						class="small_grid_a">
 						<div class="img-box">
 							<div class="img">
@@ -397,7 +397,7 @@
 				<!-- 单图文 -->
 				<div class="small_grid">
 					<c:forEach items="${dkList }" var="item">
-						<a href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')" class="small_grid_a">
+						<a href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')" class="small_grid_a">
 							<div class="img-box">
 								<div class="img">
 									<img class="lazy" src="${pageContext.request.contextPath }/uploadFiles/${item.image }" />
@@ -412,7 +412,7 @@
 							</div>
 						</a>
 					</c:forEach>
-					<%-- <a href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')" class="small_grid_a">
+					<%-- <a href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')" class="small_grid_a">
 						<div class="img-box">
 							<div class="img">
 								<img class="lazy"
@@ -428,7 +428,7 @@
 								class="index_section_number">2节</span>
 						</div>
 					</a> <a
-						href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+						href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 						class="small_grid_a">
 						<div class="img-box">
 							<div class="img">
@@ -445,7 +445,7 @@
 								class="index_section_number">1节</span>
 						</div>
 					</a> <a
-						href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+						href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 						class="small_grid_a">
 						<div class="img-box">
 							<div class="img">
@@ -463,7 +463,7 @@
 								class="index_section_number">1节</span>
 						</div>
 					</a> <a
-						href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+						href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 						class="small_grid_a">
 						<div class="img-box">
 							<div class="img">
@@ -500,7 +500,7 @@
 				<!-- 单图文 -->
 				<div class="small_grid">
 					<a
-						href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+						href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 						class="small_grid_a">
 						<div class="img-box">
 							<div class="img">
@@ -520,7 +520,7 @@
 								class="index_section_number">66节</span>
 						</div>
 					</a> <a
-						href="javascript:jumpPage('${pageContext.request.contextPath }/page/myCourse/course-detail.jsp')"
+						href="javascript:jumpPage('${pageContext.request.contextPath }/home/toCourseDetail?courseId=11')"
 						class="small_grid_a">
 						<div class="img-box">
 							<div class="img">

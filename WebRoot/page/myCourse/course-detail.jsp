@@ -25,6 +25,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/swiper.3.4.1.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/jquery.qrcode.min-v=3.2.0.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/assets/js/alert-v=3.2.0.js"></script>
+		<link href="${pageContext.request.contextPath }/assets/css/qunService-v=3.2.0.css" rel="stylesheet" />
+		<link href="${pageContext.request.contextPath }/assets/css/lesson-v=3.2.0.css" rel="stylesheet" />
 
 <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
 
@@ -56,22 +58,19 @@
 </head>
 <body>
 	<div class="page-container" id="page-container">
-		<link href="${pageContext.request.contextPath }/assets/css/qunService-v=3.2.0.css" rel="stylesheet" />
-		<link href="${pageContext.request.contextPath }/assets/css/lesson-v=3.2.0.css" rel="stylesheet" />
-
+		<input type="hidden" value="${courseData[0].id }" id="courseId">
 		<div class="header-2 cbox">
 			<a href="javascript:history.back(-1);" class="top_ico_back"><i class="layui-icon layui-icon-left" style="font-size:25px;"></i></a>
-			<div class="flex title">商业模式攻略·音频版（第一季完结）</div>
+			<div class="flex title">${courseData[0].name }</div>
 			<a href="${pageContext.request.contextPath }/page/home.jsp" class="top_ico_home"><i class="layui-icon layui-icon-home" style="font-size:25px;"></i></a>
 		</div>
 
-		<div class="content-inner" style="min-height:100%;"
-			onbeforeunload="goodbye()">
+		<div class="content-inner" style="min-height:100%;" onbeforeunload="goodbye()">
 			<!-- 视频区域 S -->
 			<input type="hidden" id="realPlayTime" value="0" />
 			<div class="video-wrap">
-				<img src="${pageContext.request.contextPath }/image/attachment/images/10/2019/01/z6R0d0Z5u001DzN1Xid8XzX0d5d5CO.png"
-					alt="商业模式攻略·音频版（第一季完结）" width="100%">
+				<img src="${pageContext.request.contextPath }/uploadFiles/${courseData[0].image }"
+					alt="${courseData[0].name }" width="100%">
 				<div class="learned">507 人已报名</div>
 			</div>
 			<!-- 视频区域 E -->
@@ -89,13 +88,10 @@
 				<div class="js-tab" style="display: block;">
 					<ul class="course-intro">
 						<li style="padding-bottom: 10px;">
-							<p class="title-bar__title" onclick="location.href=''">
-								<span class="section-status-btn fs-14 vertical-botton">已完结</span>
-								商业模式攻略·音频版（第一季完结）
-							</p>
+							<p class="title-bar__title" onclick="location.href=''">${courseData[0].name }</p>
 							<p class="lesson-bar clear">
 								<span class="grid_info mar15-left fl ios-system"> <span
-									class="price index_price_lesson font-bold flex_g0 ios-system">¥99.00</span>
+									class="price index_price_lesson font-bold flex_g0 ios-system">¥${courseData[0].price }</span>
 									<span class="mar5 ios-system">|</span> <span>66节</span>
 								</span> <span class="vnum fr"> </span>
 							</p>
@@ -106,43 +102,19 @@
 						</li>
 						<li class="details">
 							<div class="index_title bor flex1">
-								<div class="img flex0">
-									<img class="flex_g0"
-										src="${pageContext.request.contextPath }/addons/fy_lessonv2/template/mobile/default/images/lesson_introduce.png"
-										style="width: 20px;">
-								</div>
+								<div class="img flex0"><i class="layui-icon layui-icon-read" style="font-size:20px;margin-top:3px;"></i></div>
 								<div class="flex_all">课程介绍</div>
 							</div>
-							<div class="lesson-content chapter-content">
-								<p>
-									<img src="${pageContext.request.contextPath }/attachment/images/10/2018/09/HXe6y9fFYajD9DaAD9d8qYyEt3yawP.jpg"
-										width="100%" alt="下载.jpg" />
-								</p>
-							</div>
+							<div class="lesson-content chapter-content">${courseData[0].detail }</div>
 						</li>
 						<li class="details teacher_introduce">
 							<div class="index_title bor flex1">
-								<div class="img flex0">
-									<img class="flex_g0"
-										src="${pageContext.request.contextPath }/addons/fy_lessonv2/template/mobile/default/images/lesson_teacher_introduce.png"
-										style="width: 20px;">
-								</div>
+								<div class="img flex0"><i class="layui-icon layui-icon-read" style="font-size:20px;margin-top:3px;"></i></div>
 								<div class="flex_all">讲师介绍</div>
 							</div>
 							<div class="chapter-content">
-								<%-- <p class="teacher-intro">
-									<span class="chapter-intro-user"
-										onclick="location.href='./index.php?i=10&c=entry&teacherid=52&do=teacher&m=fy_lessonv2'">
-										<img
-										src="${pageContext.request.contextPath }/image/attachment/images/10/2018/09/no6QVzOVzLS6oaXVMd6v96zFQ9on9k.jpeg"
-										width="50" height="50" style="display:inline-block;"> <strong>周永亮</strong>
-										<span>总共6个课程</span> <i class="fa fa-exclamation-circle">
-											查看全部课程</i>
-									</span>
-								</p> --%>
 								<p>
-									<img
-										src="${pageContext.request.contextPath }/image/attachment/images/10/2018/09/yAJRjUvO0ZoAj0252d8V222e5v55Qv.jpeg"
+									<img src="${pageContext.request.contextPath }/image/attachment/images/10/2018/09/yAJRjUvO0ZoAj0252d8V222e5v55Qv.jpeg"
 										width="100%" alt="WechatIMG10015.jpeg" />
 								</p>
 							</div>
@@ -155,419 +127,19 @@
 				<div class="js-tab">
 					<ul class="course-chapter">
 						<li>
-							<h2 class="chapter-title" onclick="javascript:;">
-								<i class="section-title-icon"></i>商业模式攻略·音频版（第一季完结）[66课时]
+							<h2 class="chapter-title">
+								<i class="section-title-icon"></i>${courseData[0].name }[26课时]
 							</h2>
 							<ul class="course-sections">
-								<li><a href="javascript:;" onclick="readSection(362);">
-										<div>
-											<i class="course-type"> 音频 </i> 第一节：没有被淘汰的行业，只有被淘汰的模式
-										</div>
-<!-- 										<div class="free-time-content"> -->
-<!-- 											<span class="free-play-box"> <i -->
-<!-- 												class="fa fa-play-circle"></i> <i class="free-play-font">免费试听</i> -->
-<!-- 											</span> &nbsp;&nbsp;&nbsp;&nbsp; -->
-
-<!-- 										</div> -->
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(363);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二节：学会像鹰一样，快人一步发现趋势
-										</div>
-										<!-- <div class="free-time-content">
-											<span class="free-play-box"> <i
-												class="fa fa-play-circle"></i> <i class="free-play-font">免费试听</i>
-											</span> &nbsp;&nbsp;&nbsp;&nbsp;
-
-										</div> -->
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(364);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三节：共享经济会怎样影响我们的生活
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(365);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四节：打开企业盈利能力的阀门
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(366);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五节：以弱胜强的游击战思维
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(367);">
-										<div>
-											<i class="course-type"> 音频 </i> 第六节：找到破局点，打好游击战
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(368);">
-										<div>
-											<i class="course-type"> 音频 </i> 第七节：商业模式起手式之尖刀开路
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(369);">
-										<div>
-											<i class="course-type"> 音频 </i> 第八节：商业模式起手式之物尽其用
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(370);">
-										<div>
-											<i class="course-type"> 音频 </i> 第九节：商业模式起手式之规则创新
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(371);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十节：商业模式创新的六大误区
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(372);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十一节：咖啡行业的客户细分攻略
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(373);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十二节：学会这三招，方案将更能打动听众
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(374);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十三节：未来做房地产，这节是必听课
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(375);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十四节：真能吸引人的广告牌是这样的
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(376);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十五节：发现消费者中的分歧者
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(377);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十六节：为客户营造一次盗梦空间
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(378);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十七节：避免自嗨的客户需求洞察清单
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(379);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十八节：价值创造之突围中的中国茶品牌
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(380);">
-										<div>
-											<i class="course-type"> 音频 </i> 第十九节：价值创造之让客户尖叫的瞬间
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(381);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十节：价值创造之设计出的极致体验（上）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(382);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十一节：价值创造之设计出的极致体验（下）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(383);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十二节：客户买账的广告语是这么设计的
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(384);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十三节：给客户一个不能拒绝的理由
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(385);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十四节：让客户心动的卖点清单（一）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(386);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十五节：让客户心动的卖点清单（二）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(387);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十六节：让客户心动的卖点清单（三）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(388);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十七节：让客户心动的卖点清单（四）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(389);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十八节：让客户心动的卖点清单（五）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(402);">
-										<div>
-											<i class="course-type"> 音频 </i> 第二十九节：让客户心动的卖点清单（六）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(404);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十节：让客户心动的卖点清单（七）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(463);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十一节：让客户心动的卖点清单（八）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(464);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十二节：如何布局高效的渠道通路
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(465);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十三节：市场推广，你必须要知道的
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(466);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十四节：新产品的渠道通路设计
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(467);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十五节：如何让消费者想买就能买到你的产品
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(468);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十六节：为什么我要做线下体验店（上）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(469);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十七节：为什么我要做线下体验店（下）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(470);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十八节：如何用好地推这把利剑（上）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(471);">
-										<div>
-											<i class="course-type"> 音频 </i> 第三十九节：如何用好地推这把利剑（下）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(472);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十节：渠道建设的参考清单
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(482);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十一节：如何保持企业持续盈利
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(486);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十二节：听说过零成本做广告，听说过赚钱做广告的吗
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(487);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十三节：我撒币是有套路的
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(488);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十四节：好市多会员费给创业者的启示（上）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(489);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十五节：好市多会员费给创业者的启示（下）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(495);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十六节：游戏行业的盈利之路（上）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(496);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十七节：游戏行业的盈利之路（中）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(497);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十八节：游戏行业的盈利之路（下）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(498);">
-										<div>
-											<i class="course-type"> 音频 </i> 第四十九节：把盈利的构想变成可行的计划
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(499);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十节：埃隆.马斯克给创业者的启示
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(500);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十一节：OEM企业转型攻略
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(501);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十二节：相亲和投资的评判逻辑原来是一样的
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(502);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十三节：谁说抄袭不是关键资源和能力
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(503);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十四节：吉利的成长之路
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(504);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十五节：张瑞敏去他们家学什么
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(505);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十六节：京东的护城河
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(506);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十七节：资本和商业模式的关系
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(507);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十八节：投入和产出还能这么设计
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(508);">
-										<div>
-											<i class="course-type"> 音频 </i> 第五十九节：可口可乐的轻资产、重资产
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(509);">
-										<div>
-											<i class="course-type"> 音频 </i> 第六十节：银行的商业模式与互联网金融
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(510);">
-										<div>
-											<i class="course-type"> 音频 </i> 第六十一节：股权融资你需要注意什么
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(511);">
-										<div>
-											<i class="course-type"> 音频 </i> 第六十二节：赚钱的企业不一定值钱
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(512);">
-										<div>
-											<i class="course-type"> 音频 </i> 第六十三节：如何提高资产周转率
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(513);">
-										<div>
-											<i class="course-type"> 音频 </i> 第六十四节：亚马逊的关键一跃
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(514);">
-										<div>
-											<i class="course-type"> 音频 </i> 第六十五节：商业模式测评（上）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
-								<li><a href="javascript:;" onclick="readSection(515);">
-										<div>
-											<i class="course-type"> 音频 </i> 第六十六节：商业模式测评（下）
-										</div>
-										<div class="free-time-content"></div>
-								</a></li>
+								<c:forEach items="${courselistData }" var="item" varStatus="i">
+									<li><a href="javascript:readSection(${item.id});">
+										<div><i class="course-type"> 视频 </i> ${i.index+1 }-${item.name }</div>
+										<input type="hidden" id="courselistVideo-${item.id }" value="${item.video }">
+									</a></li>
+								</c:forEach>
 							</ul>
 						</li>
-						<ul>
+					</ul>
 				</div>
 				<!-- 章节目录 E -->
 
@@ -604,7 +176,7 @@
 
 		<!-- 右侧快捷导航 -->
 
-		<div class="btn_mark">
+		<!-- <div class="btn_mark">
 			<div class="btn_home">
 				<i class="mt15 fa">菜单</i>
 			</div>
@@ -618,7 +190,7 @@
 				class="mt12 fa fa-book"></i></a> <a class="btn_menu btn_my"
 				href="index.php-i=10&c=auth&a=login&forward=aT0xMCZjPWVudHJ5JmRvPXNlbGYmbT1meV9sZXNzb252Mg==&wxref=mp.weixin.qq.com.html"><i
 				class="mt12 fa fa-user"></i></a>
-		</div>
+		</div> -->
 		<script type="text/javascript">
 			$(function() {
 				$(".weui_tabbar a").click(function() {
@@ -645,8 +217,7 @@
 
 		<div id="cover" class="teacher-qrcode max-width-640">
 			<div class="qrcode-content">
-				<img
-					src="${pageContext.request.contextPath }/attachment/images/10/2019/02/cgb75c07H63bDJdKDZh5M6dhMtsTtA.jpg" />
+				<img src="${pageContext.request.contextPath }/attachment/images/10/2019/02/cgb75c07H63bDJdKDZh5M6dhMtsTtA.jpg" />
 				<p>二维码咨询方式</p>
 			</div>
 		</div>
@@ -656,48 +227,23 @@
 				<div class="contact-wrap-title">咨询交流</div>
 				<div class="border-top layer-list_item">
 					<a href="javascript:;" id="btn-qrcode">
-						<div class="layer-list_item-icon">
-							<img class="layer-list_item-img"
-								src="${pageContext.request.contextPath }/attachment/images/10/2019/02/cgb75c07H63bDJdKDZh5M6dhMtsTtA.jpg">
-						</div>
+						<i class="layui-icon layui-icon-login-wechat " 
+							style="font-size: 50px; color: #00CA0B;position: absolute;top:0px;left:15px;"></i>  
 						<p class="layer-list_item-name">微信咨询</p>
 						<p class="layer-list_item-info">点击查看二维码</p>
-						<div class="layer-list_item-go">
-							<i class="icon-font i-v-right">&gt;</i>
-						</div>
+						<div class="layer-list_item-go"><i class="icon-font i-v-right">&gt;</i></div>
 					</a>
 				</div>
 				<div class="border-top layer-list_item">
-					<a id="qq-consult"
-						href="http://wpa.qq.com/msgrd?v=3&uin=285965848&site=qq&menu=yes">
-						<div class="layer-list_item-icon">
-							<img class="layer-list_item-img"
-								src="${pageContext.request.contextPath }/addons/fy_lessonv2/template/mobile/default/images/contact-1v1-v=1.png">
-						</div>
+					<a id="qq-consult" href="http://wpa.qq.com/msgrd?v=3&uin=1416640422&site=qq&menu=yes">
+						<i class="layui-icon layui-icon-login-qq " 
+							style="font-size: 50px; color: #1680D9;position: absolute;top:0px;left:15px;"></i>
 						<p class="layer-list_item-name">QQ咨询</p>
-						<p class="layer-list_item-info">QQ:285965848</p>
+						<p class="layer-list_item-info">QQ:1416640422</p>
 						<div class="layer-list_item-go">
 							<i class="icon-font i-v-right">&gt;</i>
 						</div>
 					</a>
-				</div>
-				<div class="contact-wrap__qun border-top">
-					<div class="contact-wrap-qun-title">
-						加群交流<span class="contact-wrap-qun-desc">(获取资料、学员交流)</span>
-					</div>
-					<ul>
-						<li class="layer-list_item"><a id="qqgroup-consult">
-								<div class="layer-list_item-icon">
-									<img class="layer-list_item-img"
-										src="${pageContext.request.contextPath }/attachment/images/10/2018/09/no6QVzOVzLS6oaXVMd6v96zFQ9on9k.jpeg">
-								</div>
-								<p class="layer-list_item-name z-tail">周永亮讲师交流群</p>
-								<p class="layer-list_item-info">QQ群:550890302</p>
-								<div class="layer-list_item-go">
-									<i class="icon-font i-v-right">&gt;</i>
-								</div>
-						</a></li>
-					</ul>
 				</div>
 			</div>
 			<div class="layer-close">关闭</div>
@@ -710,16 +256,14 @@
 		<div class="spec-menu-content max-width-640 spec-menu-show hide">
 			<div class="spec-menu-top bdr-b">
 				<div class="spec-first-pic">
-					<img id="spec_image"
-						src="${pageContext.request.contextPath }/image/attachment/images/10/2019/01/z6R0d0Z5u001DzN1Xid8XzX0d5d5CO.png"
-						onerror="imgErr(this)">
+					<img id="spec_image" src="${pageContext.request.contextPath }/uploadFiles/${courseData[0].image }" onerror="imgErr(this)">
 				</div>
 				<a class="rt-close-btn-wrap spec-menu-close" onclick="closeSpec();">
 					<p class="flick-menu-close"></p>
 				</a>
 				<div class="spec-price" id="specJdPri" style="display: block">
 					<span class="yang-pic spec-yang-pic"></span> <span id="spec_price">
-						￥99.00 </span>
+						￥${courseData[0].price } </span>
 				</div>
 			</div>
 			<div class="spec-menu-middle">
@@ -733,8 +277,8 @@
 						<div class="pro-color">
 							<span class="part-note-msg"> 规格 </span>
 							<p id="color">
-								<a class="a-item spec_1271" href="javascript:;"
-									onclick="updateColorSizeSpec('1271','99.00','365','')">有效期365天</a>
+								<a class="a-item" href="javascript:updateColorSizeSpec('1271','59.00','365','');">有效期365天</a>
+								<a class="a-item spec_1271" href="javascript:updateColorSizeSpec('1271','109.00','-1','');">长期有效</a>
 							</p>
 							<input type="hidden" id="spec_id" value="" />
 						</div>
@@ -787,20 +331,24 @@
 		<!--VIP列表end-->
 
 		<ul class="d-buynow max-width-640">
-			<li class="btn-qq "><a href="javascript:;" id="btn-qq"><i
-					class="ico ico-lessonqq"></i>咨询</a></li>
-			<li class="btn-collect " id="btn-collect"><a href="javascript:;"><i
-					class="ico ico-collect"></i>收藏</a></li>
+			<li class="btn-qq "><a href="javascript:;" id="btn-qq"><i class="layui-icon layui-icon-dialogue"></i>咨询</a></li>
+			<li class="btn-collect" id="btn-collect"><a href="javascript:;">
+				<c:if test="${loveData!=null && loveData.size()>0 }">
+					<i class="layui-icon layui-icon-star-fill"></i>
+					<input type="hidden" id="is_love" value="1">
+				</c:if>
+				<c:if test="${loveData==null || loveData.size()<=0 }">
+					<i class="layui-icon layui-icon-star"></i>
+					<input type="hidden" id="is_love" value="0">
+				</c:if>
+				收藏
+			</a></li>
 
 			<!-- 显示开通VIP和立即购买 -->
-			<li class="btn-buy two-btn-buy no-ios" id="buy-vip"><a
-				href="javascript:;" class="buy buy_now orange"><p class="num">开通VIP</p></a></li>
-			<li class="btn-buy two-btn-buy is-ios" style="display:none;"><a
-				href="javascript:;" class="buy buy_now orange"><p class="num">开通VIP</p></a></li>
-			<li class="btn-buy two-btn-buy no-ios" id="buy-now"><a
-				href="javascript:;" class="buy buy_now red"><p class="num">立即报名</p></a></li>
-			<li class="btn-buy two-btn-buy is-ios" style="display:none;"><a
-				href="javascript:;" class="buy buy_now red"><p class="num">立即报名</p></a></li>
+			<li class="btn-buy two-btn-buy no-ios" id="buy-vip"><a href="javascript:;" class="buy buy_now orange"><p class="num">开通VIP</p></a></li>
+			<li class="btn-buy two-btn-buy is-ios" style="display:none;"><a href="javascript:;" class="buy buy_now orange"><p class="num">开通VIP</p></a></li>
+			<li class="btn-buy two-btn-buy no-ios" id="buy-now"><a href="javascript:;" class="buy buy_now red"><p class="num">立即报名</p></a></li>
+			<li class="btn-buy two-btn-buy is-ios" style="display:none;"><a href="javascript:;" class="buy buy_now red"><p class="num">立即报名</p></a></li>
 		</ul>
 
 		<script type="text/javascript">
@@ -812,22 +360,16 @@
 				function getData(page) {
 					if (get_status) {
 						nowPage++;
-						$
-								.get(
-										ajaxurl,
-										{
-											page : page
-										},
-										function(data) {
-											var jsonObj = JSON.parse(data);
-											if (jsonObj.length > 0) {
-												insertDiv(jsonObj);
-											} else {
-												get_status = false;
-												document
-														.getElementById("loading_div").innerHTML = '<div class="loading_bd">没有了，已经到底了</div>';
-											}
-										});
+						$.get(ajaxurl,{page : page}, function(data) {
+							var jsonObj = JSON.parse(data);
+							if (jsonObj.length > 0) {
+								insertDiv(jsonObj);
+							} else {
+								get_status = false;
+								document
+										.getElementById("loading_div").innerHTML = '<div class="loading_bd">没有了，已经到底了</div>';
+							}
+						});
 					}
 				}
 				//初始化加载第一页数据  
@@ -866,18 +408,17 @@
 
 				//定义鼠标滚动事件
 				var scroll_loading = false;
-				$(window).scroll(
-						function() {
-							var scrollTop = $(this).scrollTop();
-							var scrollHeight = $(document).height();
-							var windowHeight = $(this).height();
-							if (scrollTop + windowHeight >= scrollHeight
-									&& !scroll_loading) {
-								scroll_loading = true;
-								getData(nowPage);
-								scroll_loading = false;
-							}
-						});
+				$(window).scroll(function() {
+					var scrollTop = $(this).scrollTop();
+					var scrollHeight = $(document).height();
+					var windowHeight = $(this).height();
+					if (scrollTop + windowHeight >= scrollHeight
+							&& !scroll_loading) {
+						scroll_loading = true;
+						getData(nowPage);
+						scroll_loading = false;
+					}
+				});
 				$("#btn_Page").click(function() {
 					getData(nowPage);
 				});
@@ -893,69 +434,31 @@
 
 		<script type="text/javascript">
 			var iosBuyTip = '';
-			document
-					.addEventListener(
-							'WeixinJSBridgeReady',
-							function onBridgeReady() {
-								var miniprogram_environment = false;
-								wx.miniProgram.getEnv(function(res) {
-									if (res.miniprogram) {
-										miniprogram_environment = true;
-									}
-								})
-								if ((window.__wxjs_environment === 'miniprogram' || miniprogram_environment)) {
-									wx.miniProgram
-											.getEnv(function(res) {
-												wx.miniProgram
-														.postMessage({
-															data : {
-																'title' : "商业模式攻略·音频版（第一季完结）",
-																'images' : "${pageContext.request.contextPath }/attachment/images/10/2019/01/z6R0d0Z5u001DzN1Xid8XzX0d5d5CO.png",
-															}
-														})
-											});
-									$("#qq-consult").attr("href",
-											"javascript:;");
-									$("#qqgroup-consult").attr("href",
-											"javascript:;");
-									$("#all-consult").attr("href",
-											"javascript:;");
-									$(".follow_qrcode").hide();
-
-								}
-							});
-
-			function readSection(sectionid) {
-				var lessonid = "86";
-				$("#loadingToast").show();
-
-				$
-						.ajax({
-							type : 'get',
-							url : "./index.php?i=10&c=entry&do=sectionstudystatus&m=fy_lessonv2",
+			document.addEventListener('WeixinJSBridgeReady',function onBridgeReady() {
+				var miniprogram_environment = false;
+				wx.miniProgram.getEnv(function(res) {
+					if (res.miniprogram) {
+						miniprogram_environment = true;
+					}
+				});
+				if ((window.__wxjs_environment === 'miniprogram' || miniprogram_environment)) {
+					wx.miniProgram.getEnv(function(res) {
+						wx.miniProgram.postMessage({
 							data : {
-								id : lessonid,
-								sectionid : sectionid
-							},
-							dataType : 'json',
-							success : function(data) {
-								$("#loadingToast").hide();
-								if (data.code == 0) {
-									location.href = "./index.php?i=10&c=entry&do=lesson&m=fy_lessonv2&id="
-											+ lessonid
-											+ "&sectionid="
-											+ sectionid;
-								} else if (data.code == -99) {
-									alert(iosBuyTip ? iosBuyTip : data.msg);
-								} else {
-									alert(data.msg);
-								}
-							},
-							error : function(error) {
-								$("#loadingToast").hide();
-								alert('网络繁忙，请稍候重试');
+								'title' : "商业模式攻略·音频版（第一季完结）",
+								'images' : "${pageContext.request.contextPath }/attachment/images/10/2019/01/z6R0d0Z5u001DzN1Xid8XzX0d5d5CO.png",
 							}
 						});
+					});
+					$("#qq-consult").attr("href", "javascript:;");
+					$("#qqgroup-consult").attr("href", "javascript:;");
+					$("#all-consult").attr("href", "javascript:;");
+					$(".follow_qrcode").hide();
+				}
+			});
+
+			function readSection(sectionid) {
+				layer.msg("立即报名即可观看。");
 			}
 		</script>
 
@@ -970,10 +473,10 @@
 			});
 
 			//展开和关闭章节
-			function handleSection(obj) {
+		/* 	function handleSection(obj) {
 				$(obj).find('span').toggleClass("open");
 				$(obj).next('ul').toggleClass("hide");
-			}
+			} */
 
 			//展开咨询
 			$("#btn-qq").click(function() {
@@ -991,7 +494,7 @@
 			$('#btn-qrcode').click(function() {
 				$('#cover').fadeIn(200).unbind('click').click(function() {
 					$(this).fadeOut(100);
-				})
+				});
 			});
 
 			//课程规格
@@ -1000,18 +503,15 @@
 				$(".spec-menu-show").removeClass('hide');
 			});
 			//购买课程下一步
-			$("#buy_now")
-					.click(
-							function() {
-								var spec_id = $("#spec_id").val();
-								if (!spec_id) {
-									alert("请选择课程规格");
-									return false;
-								}
-								alert("业务繁忙，稍后再试！");
-// 								location.href = "./index.php?i=10&c=entry&id=86&do=confirm&m=fy_lessonv2&spec_id="
-// 										+ spec_id;
-							});
+			$("#buy_now").click(function() {
+				var spec_id = $("#spec_id").val();
+				if (!spec_id) {
+					alert("请选择课程规格");
+					return false;
+				}
+				location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc19662653e7edcd4&redirect_uri=http%3a%2f%2fwangfang.51vip.biz%2fclassDemo%2fpay.jsp&response_type=code&scope=snsapi_base#wechat_redirect";
+// 				alert("业务繁忙，稍后再试！");
+			});
 			//关闭课程和VIP规格
 			function closeSpec() {
 				$(".flick-menu-mask").addClass('hide');
@@ -1025,39 +525,46 @@
 				$(".vip-menu-show").removeClass('hide');
 			});
 			//提交VIP订单
-			$("#buy_vip")
-					.click(
-							function() {
-								var vip_id = $("#vip_id").val();
-								if (!vip_id) {
-									alert("请选择要购买的VIP等级");
-									return false;
-								}
-								alert("业务繁忙，稍后再试！");
-// 								location.href = "./index.php?i=10&c=entry&op=buyvip&do=vip&m=fy_lessonv2&level_id="
-// 										+ vip_id;
-							});
+			$("#buy_vip").click(function() {
+				var vip_id = $("#vip_id").val();
+				if (!vip_id) {
+					alert("请选择要购买的VIP等级");
+					return false;
+				}
+				alert("业务繁忙，稍后再试！");
+			});
 
 			//收藏按钮
 			$("#btn-collect").click(function() {
-				layer.msg("已收藏");
-				var id = "86";
-				var ajaxurl = "./index.php?i=10&c=entry&ctype=lesson&do=updatecollect&m=fy_lessonv2";
-				$.ajax({
-					type : 'post',
-					url : ajaxurl,
-					data : {
-						id : id
-					},
-					dataType : 'json',
-					success : function(data) {
-						if (data == '1') {
-							$("#btn-collect a").addClass("cur");
-						} else if (data == '2') {
-							$("#btn-collect a").removeClass("cur");
+				if($("#is_love").val()=="0"){
+					$.ajax({
+						type : 'post',
+						url : "${pageContext.request.contextPath }/Love/addLove",
+						data : { costomer_id : 1, course_id:$("#courseId").val() },
+						dataType : 'json',
+						success : function(data) {
+							if (data.succes == 'true') {
+								layer.msg("已收藏");
+								$("#btn-collect a i").removeClass("layui-icon-star").addClass("layui-icon-star-fill");
+								$("#is_love").val("1");
+							}
 						}
-					}
-				});
+					});
+				}else{
+					$.ajax({
+						type : 'post',
+						url : "${pageContext.request.contextPath }/Love/delLoveByParam",
+						data : { costomer_id: 1, course_id:$("#courseId").val() },
+						dataType : 'json',
+						success : function(data) {
+							if (data.succes == 'true') {
+								layer.msg("取消收藏");
+								$("#btn-collect a i").removeClass("layui-icon-star-fill").addClass("layui-icon-star");
+								$("#is_love").val("0");
+							}
+						}
+					});
+				}
 			});
 
 			//选择课程规格

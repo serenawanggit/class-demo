@@ -96,7 +96,6 @@
 									<span class="price index_price_lesson font-bold flex_g0 ios-system">¥${courseData[0].price }</span>
 									<span class="mar5 ios-system">|</span> <span>26节</span>
 								</span> 
-<!-- 								<span class="vnum fr"> </span> -->
 							</p>
 							<div class="flex1" style="margin: 5px 15px 0 15px;">
 								<div class="grid_info flex0">金剑峰</div>
@@ -112,7 +111,7 @@
 								</div>
 								<div class="flex_all">课程介绍</div>
 							</div>
-							<div class="lesson-content chapter-content">${courseData[0]. }</div>
+							<div class="lesson-content chapter-content">${courseData[0].detail }</div>
 						</li>
 						<li class="details teacher_introduce">
 							<div class="index_title bor flex1">

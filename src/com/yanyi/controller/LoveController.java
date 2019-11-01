@@ -34,11 +34,17 @@ public class LoveController {
 	public String DelLoveById(String ids){
 		return LoveService.delLoveById(ids)>0 ? "{\"succes\":\"true\"}" : "{\"succes\":\"false\"}";
 	}
+
+	@ResponseBody
+	@RequestMapping("/delLoveByParam")
+	public String delLoveByParam(LoveDto dto){
+		return LoveService.delLoveByParam(dto)>0 ? "{\"succes\":\"true\"}" : "{\"succes\":\"false\"}";
+	}
 	
 	//添加客户信息
-		@ResponseBody		
-		@RequestMapping("/addLove")
-		public String addLove(LoveDto Love){
-			return LoveService.addLove(Love)>0 ? "{\"succes\":\"true\"}" : "{\"succes\":\"false\"}";
-		}
+	@ResponseBody		
+	@RequestMapping("/addLove")
+	public String addLove(LoveDto Love){
+		return LoveService.addLove(Love)>0 ? "{\"succes\":\"true\"}" : "{\"succes\":\"false\"}";
+	}
 }

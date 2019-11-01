@@ -30,6 +30,6 @@ public  interface LoveService {
 	 */
 	int addLove(LoveDto love);
 	
-	
+	int delLoveByParam(LoveDto dto);	
 	
 }

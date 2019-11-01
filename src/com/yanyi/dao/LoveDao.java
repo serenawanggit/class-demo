@@ -23,5 +23,7 @@ public interface LoveDao {
 	 * @return
 	 */
 	int addLove(LoveDto love);
+
+	int delLoveByParam(LoveDto dto);
 	
 }

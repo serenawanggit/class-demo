@@ -31,5 +31,12 @@ public class OrderController {
 		 return JsonUtil.object2Json(result);
 		
 	}
+	
+	//购买课程
+	@ResponseBody
+	@RequestMapping("/addOrder")
+	public String addOrder(){
+		return "";
+	}
 
 }

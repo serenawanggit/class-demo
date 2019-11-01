@@ -9,4 +9,6 @@ public interface OrderDao {
 	List<OrderDto> queryAll(Map<String, String> map);
 
 	List<OrderDto> queryOrder(OrderDto dto);
+
+	int addOrder(OrderDto dto);
 }

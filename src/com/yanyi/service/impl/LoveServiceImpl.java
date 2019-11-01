@@ -38,6 +38,11 @@ public class LoveServiceImpl implements LoveService {
 		// TODO Auto-generated method stub
 		return loveMapper.addLove(love);
 	}
+
+	@Override
+	public int delLoveByParam(LoveDto dto) {
+		return loveMapper.delLoveByParam(dto);
+	}
 	
 	
 

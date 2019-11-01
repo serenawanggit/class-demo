@@ -32,5 +32,16 @@ public class LoveDto {
 
     private String course_id;
 
+	public LoveDto(Integer id, String costomer_id, String course_id) {
+		super();
+		this.id = id;
+		this.costomer_id = costomer_id;
+		this.course_id = course_id;
+	}
+
+	public LoveDto() {
+		super();
+	}
+
    
 }

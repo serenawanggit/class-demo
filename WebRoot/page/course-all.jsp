@@ -131,7 +131,7 @@
 		</div>
 		<script type="text/javascript">
 			function jump(data){
-				location.href = "${pageContext.request.contextPath }/page/myCourse/course-detail.jsp";
+				location.href = "${pageContext.request.contextPath }/home/toCourseDetail?courseId=11";
 			}
 		</script>
 		<!-- /课程列表 -->

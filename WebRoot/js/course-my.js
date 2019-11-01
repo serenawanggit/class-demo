@@ -89,7 +89,7 @@ function queryOrderAndCourseByPaid(index){
 }
 
 function toVideo(){
-	location.href = basePath + "/page/myCourse/video_view.jsp";
+	location.href = basePath + "/home/toVideoView?courseId=11";
 }
 
 function del(data){

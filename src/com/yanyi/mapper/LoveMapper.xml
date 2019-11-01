@@ -3,6 +3,17 @@
 <mapper namespace="com.yanyi.dao.LoveDao">
 	<select id="queryAll" resultType="com.yanyi.entity.LoveDto" parameterType="com.yanyi.entity.LoveDto">
 		select * from study_love
+		<where>
+			<if test="id!=null">
+				AND id=#{id}
+			</if>
+			<if test="costomer_id!=null">
+				AND costomer_id=#{costomer_id}
+			</if>
+			<if test="course_id!=null">
+				AND course_id=#{course_id}
+			</if>
+		</where>
 	</select>
 	
 	<delete id="delLoveById"  parameterType="string">
@@ -12,5 +23,20 @@
 	<insert id="addLove"  parameterType="com.yanyi.entity.LoveDto">
 		insert into study_love (costomer_id, course_id) values ( #{costomer_id}, #{course_id})
 	</insert>
+	
+	<delete id="delLoveByParam" parameterType="com.yanyi.entity.LoveDto">
+		delete from study_love
+		<where>
+			<if test="id!=null">
+				AND id=#{id}
+			</if>
+			<if test="course_id!=null">
+				AND course_id=#{course_id}
+			</if>
+			<if test="costomer_id!=null">
+				AND costomer_id=#{costomer_id}
+			</if>
+		</where>
+	</delete>
 	
 </mapper>

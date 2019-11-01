@@ -25,4 +25,8 @@
 			</if>
 		</where>
 	</select>
+	
+	<insert id="addOrder" parameterType="com.yanyi.entity.OrderDto">
+		INSERT INTO study_order(course_id, costomer_id, state, updateTime) VALUES(#{courseId},#{costomerId},#{state},NOW())
+	</insert>
 </mapper>

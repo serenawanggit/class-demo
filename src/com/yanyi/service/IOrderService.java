@@ -9,4 +9,6 @@ public interface IOrderService {
 	List<OrderDto> queryAll(HashMap<String, String> map);
 
 	List<OrderDto> queryOrder(OrderDto dto);
+	
+	int addOrder(OrderDto dto);
 }

@@ -23,9 +23,13 @@ public class OrderServiceImpl implements IOrderService {
 
 	@Override
 	public List<OrderDto> queryOrder(OrderDto dto) {
-		return null;
+		return orderMapper.queryOrder(dto);
 	}
-	
+
+	@Override
+	public int addOrder(OrderDto dto) {
+		return orderMapper.addOrder(dto);
+	}
 
 	
 	
