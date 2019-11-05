@@ -112,19 +112,19 @@
               </a>
             </li>
             <li data-name="course" class="layui-nav-item">
-              <a href="javascript:;" lay-href="${pageContext.request.contextPath }/page/course/course-list.jsp" lay-tips="课程管理" lay-direction="2">
+              <a href="javascript:;" lay-href="${pageContext.request.contextPath }/page/course/course-list.jsp" lay-tips="课程列表管理" lay-direction="2">
                 <i class="layui-icon layui-icon-auz"></i>
                 <cite>课程列表管理</cite>
               </a>
             </li>
             <li data-name="question" class="layui-nav-item">
-              <a href="javascript:;" lay-href="${pageContext.request.contextPath }/page/teacher/course-question.jsp" lay-tips="题库管理" lay-direction="2">
+              <a href="javascript:;" lay-href="${pageContext.request.contextPath }/page/course/course-question.jsp" lay-tips="题库管理" lay-direction="2">
                 <i class="layui-icon layui-icon-auz"></i>
                 <cite>题库管理</cite>
               </a>
             </li>
             <li data-name="course" class="layui-nav-item">
-              <a href="javascript:;" lay-href="${pageContext.request.contextPath }/page/course/teacher-new.jsp" lay-tips="课程管理" lay-direction="2">
+              <a href="javascript:;" lay-href="${pageContext.request.contextPath }/page/teacher/teacher-new.jsp" lay-tips="讲师管理" lay-direction="2">
                 <i class="layui-icon layui-icon-auz"></i>
                 <cite>讲师管理</cite>
               </a>
